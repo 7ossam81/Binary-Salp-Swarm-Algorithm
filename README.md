@@ -1,1 +1,1 @@
-# Binary-Salp-Swarm-Algorithm
+# Binary Salp Swarm Algorithm (BSSA)
