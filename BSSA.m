@@ -1,21 +1,26 @@
-%  Binary Salp Swarm Algorithm (SSA) based on:
-%_______________________________________________________________________________
+%  Binary Salp Swarm Algorithm (SSA) developed by 
+%  Faris, H., Mafarja, M.M., Heidari, A.A., Aljarah
+%  
+%  The code is based on:
 %  Salp Swarm Algorithm (SSA) source codes version 1.0
 %
-%  Developed in MATLAB R2016a
+%  Developed by Seyedali Mirjalili
+%               e-Mail: ali.mirjalili@gmail.com
+%                       seyedali.mirjalili@griffithuni.edu.au
+%               Homepage: http://www.alimirjalili.com        
+%       
 %
-%  Author and programmer: Seyedali Mirjalili
+%   Main papers:
 %
-%         e-Mail: ali.mirjalili@gmail.com
-%                 seyedali.mirjalili@griffithuni.edu.au
-%
-%       Homepage: http://www.alimirjalili.com
-%
-%   Main paper:
 %   S. Mirjalili, A.H. Gandomi, S.Z. Mirjalili, S. Saremi, H. Faris, S.M. Mirjalili,
 %   Salp Swarm Algorithm: A bio-inspired optimizer for engineering design problems
 %   Advances in Engineering Software
 %   DOI: http://dx.doi.org/10.1016/j.advengsoft.2017.07.002
+%
+%   Faris, H., Mafarja, M.M., Heidari, A.A., Aljarah, I., Ala’M, A.Z., Mirjalili, S. and Fujita, H., 2018. 
+%   An efficient binary Salp Swarm Algorithm with crossover scheme for feature selection problems. 
+%   Knowledge-Based Systems, 154, pp.43-67.
+%   https://doi.org/10.1016/j.knosys.2018.05.009
 %____________________________________________________________________________________
 
 function [FoodFitness,FoodPosition,Convergence_curve,Time]=BSSA(N,Max_iter,dim,trn,TFid)
@@ -93,7 +98,7 @@ while l<Max_iter+1
         lb=0;
         SalpPositions(i,:)=(SalpPositions(i,:).*(~(Tp+Tm)))+ub'.*Tp+lb'.*Tm;
         
-        %SalpFitness(1,i)=fobj(SalpPositions(i,:));
+        
          fitness=AccTrain(SalpPositions(i,:),trn);
 
         SalpFitness(1,i)=fitness;
